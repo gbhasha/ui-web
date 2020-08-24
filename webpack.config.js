@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+var path = require('path');
 
 module.exports = {
     entry: './src/index.js',
@@ -36,6 +37,8 @@ module.exports = {
       filename: 'bundle.js'
     },
     devServer: {
-      contentBase: './dist'
+      contentBase: path.join(__dirname, 'dist'),
+      compress: true,
+      port: 9001
     }
   };
