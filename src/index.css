@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+header.App-header {
+  background: gray;
+  color: white;
+  min-height: 50px;
+}
+
+a {
+  padding: 20px;
+  display: inline-block;
+}
+
+section.App-section {
+  background: wheat;
+  height: 300px;
+}
+

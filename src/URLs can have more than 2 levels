@@ -1,0 +1,42 @@
+URLs can have more than 2 levels
+URLs should not have sensitive and personal information
+URLs can have product / functionality / feature names (Use business terms or in a way end user understands the url paths)
+Shorten the urls as much as possible (with meaningful names) for ex: www.idfcbank.com/applyloan
+Campaign links will have /dl/ as an identifier ex: www.idfcbank.com/dl/hhekr23432kjbkj234
+Use only lowercase in the url. Do not use either technical or tab names, Use business terms or in a way end user understands the url paths
+Use uniform pattern in the url (Do not user camelcase, special characters, lowercases and uppercases altogether)
+Every page should be mapped with a URL
+Every acquisition flow should be mapped with a URL (Ex: Fund transfer, apply loan, create FD and RD)
+Every account specific, user specific information in the URL will be replaced with a universal id (Corresponding APIs will provide us all the required information)
+When there are multiple dynamic data in URL, it will be clubbed under one universal id and the required information will be given by the appropriate APIs (For example: If we make CHANGE NOMINEE mapped with a URL, we need to provide two informations in the URL, say Account ID and Nominee Name, in this case, your API will provide a URL with a single universal ID, say instead of
+/accounts/{ACCOUNT_HASH}/nominee/{NOMINEE_HASH}/edit it will be /accounts/nominee/edit/{COMBINED_HASH}
+
+)
+Flow models with multiple flows within a feature should be covered with only one URL, for example: buy gold loan modal has 3 pages, one for fill up the required data, then a confirmation of given details and then a success page, For this case, the URL should be like /investments/buygold only. This is applicable for every transactional modal which has multiple transitions within the flow modal.
+Accounts details, deposit details and load details etc.., (COTS related) pages have to be linked with a URL along with a universal ID which points to the corresponding actual reference. Example: /have/accounts/adDSojfsD12Ds will be pointing to a particular account details. Currently implementation does not have this option but we have to make it work with the help of some API wrappers.
+Both mobile and web have similar urls for pointing corresponding pages
+Universal search results should have only the links with Universal ID along with the required display data.
+
+
+Why universal ID?
+
+As per ISG standards, no personal or account related information should be present in the URLs.
+
+
+
+How universal IDs are possible and how would it be mapped with the actual data?
+
+There is new API service called MAPPER, which helps us creating universal IDs for respected data, which can be consumed by the respective APIs in the app.
+
+Going forward, only the universal IDs will be used for any reference.
+
+
+
+Few example URLs
+
+For account details, instead of https://app.dev-opt.idfcbank.com/have/accounts/12345678 it will be https://app.dev-opt.idfcbank.com/have/accounts/803f2de986884b4c9d92817c8cdf2d3b
+
+For change nominee we need 2 information, instead of  https://app.dev-opt.idfcbank.com/have/accounts/0c28ae1a37a849a0b4201805425cd3eb/nominee/0fsffae1a37a849a0b4201805425cd3eb/edit it will be https://app.dev-opt.idfcbank.com/have/accounts/nominee/edit/34827yfuishfkj3284rhskfd23
+
+For create fixed deposit, instead of https://app.dev-opt.idfcbank.com/have/deposits it will be https://app.dev-opt.idfcbank.com/have/deposits/createfd
+
