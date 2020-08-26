@@ -8,7 +8,7 @@ module.exports = {
       rules: [
         {
           test: /\.(js|jsx)$/,
-          exclude: /node_modules/,
+          exclude: [/node_modules\/(?!(@idfc\/ccl-commons)\/).*/, /\.test\.jsx?$/],
           use: ['babel-loader']
         },
         {
@@ -22,7 +22,7 @@ module.exports = {
       ]
     },
     plugins: [
-        new BundleAnalyzerPlugin(),
+        // new BundleAnalyzerPlugin(),
         new HtmlWebPackPlugin({
           template: "index.html",
           filename: "./index.html"

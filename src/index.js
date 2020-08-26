@@ -6,12 +6,17 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import { LastLocationProvider } from 'react-router-last-location';
 
+import {maroon100} from '@idfc/ccl-commons/palette';
+
+import { FontColor, FontSize } from '@idfc/ccl-commons/enums';
+
+console.log( maroon100);
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <LastLocationProvider>
-        <button>Primary</button>
+        <p style={{color: FontColor.maroon100, fontSize: `${FontSize.SIZE_36}px`}}>Primary</p>
       </LastLocationProvider>
     </Router>
   </React.StrictMode>,
